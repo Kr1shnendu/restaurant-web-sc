@@ -8,7 +8,7 @@ const Header = () => {
 
  '>
           <h2 className='font-medium text-[max(3.5vw)] text-white ml-2 '  >Order your favourite food here</h2>
-            <p className='text-[1vw] text-white ml-2' >Choose from a diverse menu featuring a delactable array of dishes crafted 
+            <p className='text-[1vw] text-white ml-2 ' >Choose from a diverse menu featuring a delactable array of dishes crafted 
               with finest ingredients and cluinary expertise.</p>
               <p className='text-[1vw] text-white ml-2'> our mission is to satisfy your cravings and elevate your dinning 
               experience,one delicious meal at a time.</p>

@@ -36,13 +36,13 @@ const Cart = () => {
           }
         })}
       </div>
-      <div className="cart-bottom mt-20 flex justify-between gap-80">
+      <div className="cart-bottom  mt-20  flex-col-reverse sm:flex-col md:flex lg:flex-row justify-between    gap-80  ">
         <div className="cart-total flex-1 flex-col gap-5 ">
           <h2 className="font-bold gap-4 mb-4 text-2xl" >Cart Totals</h2>
           <div>
             <div className="cart-total-details flex justify-between text-gray-700">
               <p>Subtotal</p>
-              <p>{getTotaCartAmount()===0?0:getTotaCartAmount()+2}</p>
+              <p>{getTotaCartAmount()===0?0:getTotaCartAmount()}</p>
             </div>
             <hr className="" />
             <div className="cart-total-details flex justify-between text-gray-700">
@@ -52,13 +52,13 @@ const Cart = () => {
             <hr className=""/>
             <div className="cart-total-details flex justify-between text-gray-700 ">
               <b  >Total</b>
-              <b>{0}</b>
+              <p>{getTotaCartAmount()===0?0:getTotaCartAmount()+2}</p>
               </div>
               
           </div>
           <button onClick={()=>navigate('/order')}  className="border-none  text-white bg-red-500 w-96 border-r-4">PROCEED TO CHECKOUT</button>
         </div>
-        <div className="promocode  flex-1  ">
+        <div className="promocode px-5  justify-start  ">
           <div>
             <p className="text-gray-700 ">If you have a promocode enter it here</p>
             <div className="cart promocode input mt-3 flex justify-between items-center  border-r-4 " >

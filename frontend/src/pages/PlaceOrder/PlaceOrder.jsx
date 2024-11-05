@@ -34,7 +34,7 @@ const PlaceOrder = () => {
           <div>
             <div className="cart-total-details flex justify-between text-gray-700">
               <p>Subtotal</p>
-              <p>{ getTotaCartAmount()===0?0:getTotaCartAmount()+2}</p>
+              <p>{ getTotaCartAmount()===0?0:getTotaCartAmount()}</p>
             </div>
             <hr className="" />
             <div className="cart-total-details flex justify-between text-gray-700">
@@ -44,7 +44,7 @@ const PlaceOrder = () => {
             <hr className=""/>
             <div className="cart-total-details flex justify-between text-gray-700 ">
               <b  >Total</b>
-              <b>{0}</b>
+              <b>{getTotaCartAmount()===0?0:getTotaCartAmount()+2}</b>
               </div>
               
           </div>
