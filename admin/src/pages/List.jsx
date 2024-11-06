@@ -36,8 +36,8 @@ const List = () => {
   },[]);
 
   return (
-    <div className='pt-5 px-2 text-slate-600 font-medium bg-slate-50 col-span-4 text-xs sm:text-base lg:text-xl'>
-      <p>All Foods List</p>
+    <div className='pt-5 px-2 text-slate-600 font-medium bg-slate-50 col-span-4 text-xs sm:text-base lg:text-xl mb-10'>
+      <p className='m-2'>All Foods List</p>
       <div className='border border-slate-950'>
         <div className='grid grid-cols-5 items-center border border-black'>
           <b className='border'>Image</b>
