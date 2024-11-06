@@ -4,8 +4,8 @@ import { assets } from '../../assets/assets'
 const LoginPopUp = ({setShowLogin}) => {
     const[currState,setCurrState]=useState("Login")
   return (
-    <div className=' z-10 absolute w-full bg-[#00000090] grid h-[100%] ' >
-        <form  className=" w-[max(23vw,330px)] text-gray-800 bg-gray-300 flex flex-col gap-6 px-6 py-7 border-r-5 place-self-center">
+    <div className=' z-10 absolute w-full grid h-[100%] ' >
+        <form  className=" w-[max(23vw,330px)] text-gray-800 bg-gray-300 flex flex-col gap-6 px-6 py-7 border-r-5 place-self-center shadow-2xl rounded-xl">
             <div className="flex justify-between items-center text-slate-900 font-bold">
                 <h2>{currState}</h2>
                 <img className='w-4 cursor-pointer' onClick={()=> setShowLogin(false)} src={assets.cross_icon} alt="" />
