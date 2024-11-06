@@ -4,7 +4,7 @@ import { food_list } from "../assets/assets";
 export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
-  const url = "http://localhost:4000"
+  const url = "https://restaurant-web-backend.onrender.com"
   const [token, setToken] = useState("");
 
   useEffect(()=> {
