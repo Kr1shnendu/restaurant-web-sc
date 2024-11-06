@@ -5,7 +5,7 @@ import { TrashIcon } from '@heroicons/react/24/outline'
 
 const List = () => {
 
-  const url = "http://localhost:4000";
+  const url = "https://restaurant-web-backend.onrender.com";
 
   const [list, setList] = useState([]);
 
