@@ -4,7 +4,7 @@ import { assets } from '../../assets/assets'
 const LoginPopUp = ({setShowLogin}) => {
     const[currState,setCurrState]=useState("Login")
   return (
-    <div className=' z-10 absolute w-full grid h-[100%] ' >
+    <div className=' z-10 absolute flex h-[100%]' >
         <form  className=" w-[max(23vw,330px)] text-gray-800 bg-gray-300 flex flex-col gap-6 px-6 py-7 border-r-5 place-self-center shadow-2xl rounded-xl">
             <div className="flex justify-between items-center text-slate-900 font-bold">
                 <h2>{currState}</h2>

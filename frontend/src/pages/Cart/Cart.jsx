@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { StoreContext } from "../../Context/StoreContext";
 import { useNavigate } from "react-router-dom";
+import { TrashIcon } from '@heroicons/react/24/outline'
 
 const Cart = () => {
   const { cartItems, food_list, removeFromCart, getTotaCartAmount } = useContext(StoreContext);
@@ -28,7 +29,9 @@ const Cart = () => {
                 <p>{item.price}</p>
                 <p>{cartItems[item._id]}</p>
                 <p>{item.price * cartItems[item._id]}</p>
-                <p onClick={()=>removeFromCart(item._id)} className="cursor-pointer" >x</p>
+                <p onClick={()=>removeFromCart(item._id)} className="cursor-pointer" >
+                  <TrashIcon className='text-red-800 h-5 sm:h-6 lg:h-7 m-auto'/>
+                </p>
               </div>
               <hr className="h-1 bg-white" />
             </div>
@@ -36,7 +39,7 @@ const Cart = () => {
           }
         })}
       </div>
-      <div className="cart-bottom  mt-20  flex-col-reverse sm:flex-col md:flex lg:flex-row justify-between    gap-80  ">
+      <div className="cart-bottom  mt-20 flex flex-col lg:flex-row justify-between gap-8">
         <div className="cart-total flex-1 flex-col gap-5 ">
           <h2 className="font-bold gap-4 mb-4 text-2xl" >Cart Totals</h2>
           <div>
@@ -56,7 +59,7 @@ const Cart = () => {
               </div>
               
           </div>
-          <button onClick={()=>navigate('/order')}  className="border-none  text-white bg-red-500 w-96 border-r-4">PROCEED TO CHECKOUT</button>
+          <button onClick={()=>navigate('/order')}  className="text-white bg-red-500 px-8 lg:w-96">PROCEED TO CHECKOUT</button>
         </div>
         <div className="promocode px-5  justify-start  ">
           <div>
