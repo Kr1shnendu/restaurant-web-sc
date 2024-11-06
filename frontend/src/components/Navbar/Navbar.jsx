@@ -1,14 +1,20 @@
-import React,{useState} from 'react'
-import {assets} from '../../assets/assets'
-import {Link} from 'react-router-dom'
-import { useContext } from 'react';
+import { ShoppingCartIcon } from '@heroicons/react/24/solid';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { assets } from '../../assets/assets';
 import { StoreContext } from '../../Context/StoreContext';
-import { ShoppingCartIcon } from '@heroicons/react/24/solid'
 
 
 const Navbar = ({setShowLogin}) => {
   const [menu,setMenu] =useState("home");
-  const {getTotaCartAmount}=useContext(StoreContext)
+  const {getTotaCartAmount, token, setToken}=useContext(StoreContext)
+
+  const navigate = useNavigate();
+  const logout = () => {
+    localStorage.removeItem("token");
+    setToken("");
+    navigate("/");
+  }
   return (
          /**Navbar */
        <div className='p-2 flex justify-between items-center bg-white rounded-2xl shadow-lg'>
@@ -33,10 +39,17 @@ const Navbar = ({setShowLogin}) => {
           
               <div className={getTotaCartAmount()===0?"":'absolute min-w-2 min-h-2 bg-red-600 rounded-[5px] top-[-8px] right-[-8px]'}></div>
               
+          </div>
+          {
+            !token?
+            <button onClick={()=> setShowLogin(true)}  className=' navbar-button  bg-transparent text-xs text-purple-900 border-2 border-gray-400 py-3  rounded-3xl cursor-pointer hover:bg-red-100 transition duration-300 h-12 w-24 px-3 sm:px-4 md:px-5 lg:px-6  '>sign in</button>
+            :
+            <div className='flex flex-row'>
+              <img className='h-10 p-1 border border-indigo-900 border-spacing-1 rounded-full' src={assets.profile_icon} alt="" />
+              <img onClick={logout} className='h-5 my-auto hover:cursor-pointer' src={assets.logout_icon} alt="" />
             </div>
+          }
           
-          
-          <button onClick={()=> setShowLogin(true)}  className=' navbar-button  bg-transparent text-xs text-purple-900 border-2 border-gray-400 py-3  rounded-3xl cursor-pointer hover:bg-red-100 transition duration-300 h-12 w-24 px-3 sm:px-4 md:px-5 lg:px-6  '>sign in</button>
         </div>
 
        </div>

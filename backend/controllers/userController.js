@@ -4,9 +4,9 @@ import userModel from "../models/userModel.js";
 
 // login user
 const loginUser = async (req, res) => {
-    const {phone,password} = req.body;
+    const {email,password} = req.body;
     try {
-        const user = await userModel.findOne({phone});
+        const user = await userModel.findOne({email});
 
         if(!user) {
             return res.json({
@@ -45,10 +45,10 @@ const createToken = (id) => {
 
 // register user
 const registerUser = async (req, res) => {
-    const {name,password,phone} = req.body;
+    const {name,password,email} = req.body;
     try {
         // check if user already exists
-        const exists = await userModel.findOne({phone});
+        const exists = await userModel.findOne({email});
         if(exists) {
             return res.json({
                 success: false,
@@ -71,7 +71,7 @@ const registerUser = async (req, res) => {
 
         const newUser = new userModel({
             name: name,
-            phone: phone,
+            email: email,
             password: hashedPassword
         });
         const user = await newUser.save();
@@ -85,7 +85,7 @@ const registerUser = async (req, res) => {
         console.log(error);
         res.json({
             success: false,
-            message: "Error"
+            message: error
         })
     }
 }
